@@ -1,3 +1,5 @@
+### 随手笔记
+
 ```
 {{}}            双大括号插值表达式
 
@@ -307,7 +309,7 @@ Promise和可观察对象 (Observable)
 ```
 
 
-用得漂亮的词汇：
+### 用得漂亮的词汇：
 
 我们不能把这 60 来行 CSS 粘贴到组件元数据的styles中，否则它会淹没组件的工作逻辑。反之，我们应该在独立的*.css文件中编辑这些CSS。
 
@@ -316,9 +318,9 @@ this.heroService.getHeroes().then(heroes => this.heroes = heroes);
 
 
 
-angular http 增删改查
+### angular http 增删改查
 
-查询全部
+* 查询全部
 ```
 getHeroes(): Promise<Hero[]> {
   return this.http.get(this.heroesUrl)
@@ -334,7 +336,7 @@ private handleError(error: any): Promise<any> {
 
 ```
 
-id查询
+* id查询
 ```
 getHero(id: number): Promise<Hero> {
   const url = `${this.heroesUrl}/${id}`;
@@ -345,7 +347,7 @@ getHero(id: number): Promise<Hero> {
 }
 ```
 
-修改：
+* 修改：
 ```
 private headers = new Headers({'Content-Type': 'application/json'});
 
@@ -359,7 +361,7 @@ update(hero: Hero): Promise<Hero> {
 }
 ```
 
-新增：
+* 新增：
 ```
 create(name: string): Promise<Hero> {
   return this.http
@@ -370,7 +372,7 @@ create(name: string): Promise<Hero> {
 }
 ```
 
-删除：
+* 删除：
 ```
 delete(id: number): Promise<void> {
   const url = `${this.heroesUrl}/${id}`;
